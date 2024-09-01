@@ -1,7 +1,7 @@
 const Joi = require('joi');
 
 module.exports = {
-  nitificationUpdate(req, res, next) {
+  notificationUpdate(req, res, next) {
     const schema = Joi.object({
       searchQuery: Joi.string().min(3).max(250).required(),
       interval: Joi.string().valid('hourly', 'daily', 'weekly').required(),

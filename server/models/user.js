@@ -26,7 +26,12 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({}) {}
+    static associate({ Notification }) {
+        User.hasOne(Notification,{
+            foreignKey: 'user_id',
+            as:'notification'
+        })
+    }
   }
   User.init(
     {
@@ -47,10 +52,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       password: {
         type: DataTypes.STRING,
-      },
-      deleted_at: {
-        allowNull: true,
-        type: DataTypes.DATE,
       },
       created_at: {
         allowNull: false,

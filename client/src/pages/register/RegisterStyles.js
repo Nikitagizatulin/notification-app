@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Button, Input, Typography } from 'antd';
+import { Button, Typography } from 'antd';
 
 const { Title } = Typography;
 
@@ -12,11 +12,6 @@ export const RequestAccessContainer = styled.div`
 
 export const RequestAccessTitle = styled(Title)`
   text-align: center;
-`;
-
-export const PasswordInput = styled(Input.Password)`
-  border-width: 2px;
-  height: 40px;
 `;
 export const CancelButton = styled(Link)`
   line-height: 1;

@@ -25,7 +25,7 @@ module.exports = (app) => {
   app.post(
     '/api/notification-details',
     UserAuthenticatedMiddleware.userAuthenticated,
-    NotificationControllerPolicy.nitificationUpdate,
+    NotificationControllerPolicy.notificationUpdate,
     NotificationController.updateNotification
   );
   require('./error')(app);

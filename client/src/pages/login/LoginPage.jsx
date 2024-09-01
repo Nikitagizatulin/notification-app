@@ -1,15 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-import { Form, Alert } from 'antd';
+import { Form, Alert, Input } from 'antd';
 
 import { loginUser } from '../../store/slices/authStore/authActions';
 import { resetErrors } from '../../store/slices/authStore/authSlice';
 import MainLayoutComponent from '../../components/mainLayout/MainLayoutComponent';
 import {
   LoginContainer,
-  LoginInput,
-  PasswordInput,
   LoginButton,
   LinkButton,
   LinkWrapper,
@@ -43,7 +41,7 @@ const Login = () => {
               },
             ]}
           >
-            <LoginInput placeholder="Your Email" />
+            <Input size="large" placeholder="Your Email" />
           </Form.Item>
 
           <Form.Item
@@ -55,7 +53,8 @@ const Login = () => {
               },
             ]}
           >
-            <PasswordInput
+            <Input.Password
+              size="large"
               placeholder="Password"
               iconRender={(visible) =>
                 visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />

@@ -4,7 +4,6 @@ import { Row, Col, Form, Alert, Input } from 'antd';
 
 import SubmitButton from '../../components/common/SubmitButton';
 import {
-  PasswordInput,
   ButtonWrapper,
   CancelButton,
   RequestAccessContainer,
@@ -46,7 +45,7 @@ const RequestAccess = () => {
                   },
                 ]}
               >
-                <Input placeholder="Your Email" />
+                <Input size="large" placeholder="Your Email" />
               </Form.Item>
             </Col>
             <Col sm={12} xs={24}>
@@ -62,7 +61,7 @@ const RequestAccess = () => {
                   },
                 ]}
               >
-                <Input placeholder="User Full Name" />
+                <Input size="large" placeholder="User Full Name" />
               </Form.Item>
             </Col>
           </Row>
@@ -83,7 +82,7 @@ const RequestAccess = () => {
             ]}
             hasFeedback
           >
-            <PasswordInput placeholder="Password" />
+            <Input.Password size="large" placeholder="Password" />
           </Form.Item>
 
           <Form.Item
@@ -109,7 +108,7 @@ const RequestAccess = () => {
               }),
             ]}
           >
-            <PasswordInput placeholder="Password Confirm" />
+            <Input.Password size="large" placeholder="Password Confirm" />
           </Form.Item>
           <ButtonWrapper>
             <CancelButton to="/login">Cencel</CancelButton>

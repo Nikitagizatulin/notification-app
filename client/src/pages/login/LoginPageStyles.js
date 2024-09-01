@@ -1,19 +1,11 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Button, Input } from 'antd';
+import { Button } from 'antd';
 
 export const LoginContainer = styled.div`
     margin: 23vh auto 0;
     max-width: 355px;
     width: 100%;
-`;
-export const PasswordInput = styled(Input.Password)`
-    border-width: 2px;
-    height: 40px;
-`;
-export const LoginInput = styled(Input)`
-    height: 40px;
-    border-width: 2px;
 `;
 export const LinkButton = styled(Link)`
     border-bottom: 2px solid #c7c2fc;

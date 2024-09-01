@@ -5,7 +5,7 @@ module.exports = {
     passport.authenticate('jwt', { session: false }, (err, user) => {
       if (err || !user) {
         res.status(403).send({
-          error: req.t('doNotHaveAccess'),
+          error: 'Access denied',
         });
       } else {
         req.user = user;
