@@ -27,10 +27,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({ Notification }) {
-        User.hasOne(Notification,{
-            foreignKey: 'user_id',
-            as:'notification'
-        })
+      User.hasOne(Notification, {
+        foreignKey: 'user_id',
+        as: 'notification',
+      });
     }
   }
   User.init(

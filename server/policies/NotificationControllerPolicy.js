@@ -14,7 +14,9 @@ module.exports = {
       }),
       time: Joi.when('interval', {
         is: Joi.string().valid('weekly', 'daily'),
-        then: Joi.date().timestamp().required(),
+        then: Joi.string()
+          .pattern(/^([01]\d|2[0-3]):([0-5]\d)$/)
+          .required(),
         otherwise: Joi.optional(),
       }),
     });

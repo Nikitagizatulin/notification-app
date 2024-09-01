@@ -112,7 +112,7 @@ const RequestAccess = () => {
           </Form.Item>
           <ButtonWrapper>
             <CancelButton to="/login">Cencel</CancelButton>
-            <SubmitButton type="primary" htmlType="submit" loading={isLoading}>
+            <SubmitButton type="primary" htmlType="submit"loading={isLoading}>
               Register
             </SubmitButton>
           </ButtonWrapper>

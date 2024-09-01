@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import dayjs from 'dayjs';
 import {
   Typography,
   Form,
@@ -52,12 +53,12 @@ const NotificationSettings = () => {
   const selectedInterval = Form.useWatch('interval', form);
 
   const initialValues = {
-    searchQuery: nitificationSettingData?.search_query,
-    interval: 'hourly',
-    // due: [
-    //     dayjs(data?.assessment?.due_start_date),
-    //     dayjs(data?.assessment?.due_end_date),
-    // ],
+    searchQuery: nitificationSettingData?.notification?.search_query,
+    time: nitificationSettingData?.notification?.time
+      ? dayjs(nitificationSettingData?.notification?.time, 'HH:mm:ss')
+      : '',
+    interval: nitificationSettingData?.notification?.interval || 'hourly',
+    days: nitificationSettingData?.notification?.days,
   };
 
   useEffect(() => form.resetFields(), [nitificationSettingData, form]);
@@ -78,8 +79,9 @@ const NotificationSettings = () => {
   }, [updateLoading]);
 
   const onFinish = (values) => {
-    debugger
-    updateNotificationDetails(values);
+    const dataForUpdate = { ...values };
+    if (values.time) dataForUpdate.time = values.time.format('HH:mm');
+    updateNotificationDetails(dataForUpdate);
   };
 
   return (
@@ -90,7 +92,6 @@ const NotificationSettings = () => {
           Configure your email notification settings for relevant business bids.
         </NotificationDescription>
         <Form
-          loading={isLoading || isFetching || updateLoading}
           initialValues={initialValues}
           form={form}
           name="nitification"
@@ -149,12 +150,16 @@ const NotificationSettings = () => {
               selectedInterval === 'weekly') && (
               <Col sm={8} xs={24}>
                 <Form.Item name="time" label="Notification Time" required>
-                  <TimePicker size="large" />
+                  <TimePicker size="large" format="HH:mm" />
                 </Form.Item>
               </Col>
             )}
           </Row>
-          <SubmitButton type="primary" htmlType="submit">
+          <SubmitButton
+            type="primary"
+            htmlType="submit"
+            loading={isLoading || isFetching || updateLoading}
+          >
             Save
           </SubmitButton>
         </Form>

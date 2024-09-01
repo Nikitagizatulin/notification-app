@@ -12,8 +12,8 @@ const sendMail = (to, templateId, dynamicTemplateData) => {
         templateId,
         dynamicTemplateData,
         asm: {
-            groupId: 110697,
-            groupsToDisplay: [110697],
+            groupId: 25075,
+            groupsToDisplay: [25075],
         },
     });
 };

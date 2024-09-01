@@ -22,13 +22,13 @@ module.exports = {
         allowNull: false,
         type: Sequelize.ENUM('hourly', 'daily', 'weekly'),
       },
-      days:{
+      days: {
         allowNull: true,
-        type: Sequelize.JSON
+        type: Sequelize.JSON,
       },
-      time:{
+      time: {
         allowNull: true,
-        type: Sequelize.TIME
+        type: Sequelize.TIME,
       },
       created_at: {
         allowNull: false,
