@@ -46,7 +46,7 @@ module.exports = {
       const isPasswordValid = await user.comparePassword(password);
       if (!isPasswordValid) {
         return res.status(400).send({
-          error: 'Incorrect passwordНажмите, чтобы использовать этот вариант',
+          error: 'Incorrect password',
         });
       }
 
