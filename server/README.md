@@ -1,4 +1,4 @@
-# SecureSky360 app
+# Notification app
 
 > A Node.js project with ( Express.js, Passport.js, Sequelize, Joi)
 
