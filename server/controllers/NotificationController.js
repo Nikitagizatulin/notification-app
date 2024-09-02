@@ -32,7 +32,11 @@ module.exports = {
         data.time = req.body.time;
       }
       if (notification) {
-        await notification.update(data);
+        await notification.update({
+          days: null,
+          time: null,
+          ...data
+        });
       } else {
         notification = await Notification.create({
           ...data,
