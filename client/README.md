@@ -12,6 +12,9 @@ npm install
 
 # rename .env.example to .env and fill in this file settings
 mv .env.example .env
+
+# Add server url to .env file (localhost:3001 is just example)
+REACT_APP_API_URL=http://localhost:3001
 ```
 ## Available Scripts
 
